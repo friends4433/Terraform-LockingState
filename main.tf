@@ -3,3 +3,10 @@ provider "aws" {
     secret_key = "${var.aws_secret_key}"
     region = "${var.aws_region}"
 }
+terraform {
+  backend "s3" {
+    bucket = "gvfxbucket02"
+    key    = "Project.tfstate"
+    region = "us-east-1"
+  }
+}
